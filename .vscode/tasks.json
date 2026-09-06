@@ -1,0 +1,110 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Web (WASM)",
+      "type": "shell",
+      "presentation": {
+        "reveal": "always"
+      },
+      "command": "flutter",
+      "args": [
+        "build",
+        "web",
+        "--target='lib/main.dart'",
+        "--dart-define-from-file='.env/release.json'",
+        "--wasm",
+        "--no-source-maps",
+        "--release",
+      ]
+    },
+
+    {
+      "label": "Web (Launch)",
+      "type": "shell",
+      "presentation": {
+        "reveal": "always"
+      },
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Web (WASM)",
+      ],
+      "command": "bun",
+      "args": [
+        "x",
+        "serve",
+        "build/web",
+        "--listen='3333'",
+        "--single",
+        "--cors",
+      ]
+    },
+
+    {
+      "label": "Android (Bundle)",
+      "type": "shell",
+      "presentation": {
+        "reveal": "always"
+      },
+      "command": "flutter",
+      "args": [
+        "build",
+        "apk",
+        "--target='lib/main.dart'",
+        "--dart-define-from-file='.env/release.json'",
+        "--release",
+      ]
+    },
+
+    {
+      "label": "Android (APK)",
+      "type": "shell",
+      "presentation": {
+        "reveal": "always"
+      },
+      "command": "flutter",
+      "args": [
+        "build",
+        "apk",
+        "--target='lib/main.dart'",
+        "--dart-define-from-file='.env/debug.json'",
+        "--debug",
+      ]
+    },
+
+    {
+      "label": "Android (Install)",
+      "type": "shell",
+      "presentation": {
+        "reveal": "always"
+      },
+      "command": "flutter",
+      "args": [
+        "install",
+        "--use-application-binary='build/app/outputs/flutter-apk/app-debug.apk'",
+        "--device-id=adb",
+      ]
+    },
+
+    {
+      "label": "Android (Launch)",
+      "type": "shell",
+      "presentation": {
+        "reveal": "always"
+      },
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Android (APK)",
+        "Android (Install)",
+      ],
+      "command": "adb",
+      "args": [
+        "shell",
+        "am",
+        "start",
+        "-S",
+        "'dev.yuriusu.dinoflame/.MainActivity'"
+      ]
+    },
+  ]
+}

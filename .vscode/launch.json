@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Web (Debug)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+      "deviceId": "chrome",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define-from-file=.env/debug.json",
+        "--web-hostname=localhost",
+        "--web-port=3000",
+      ],
+      "console": "debugConsole",
+      "internalConsoleOptions": "openOnSessionStart"
+    },
+
+    {
+      "name": "Android (Debug)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+      "deviceId": "adb",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define-from-file=.env/debug.json",
+      ],
+      "console": "debugConsole",
+      "internalConsoleOptions": "openOnSessionStart"
+    },
+  ]
+}

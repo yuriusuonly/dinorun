@@ -1,0 +1,65 @@
+name: dinoflame
+description: "War with the dinos"
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flame: ^1.37.0
+  google_fonts: ^8.1.0
+  intl: ^0.20.2
+  go_router: ^17.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: false
+  assets:
+    - fonts/
+
+    - icons/
+
+    - images/backgrounds/parallax_1.png
+    - images/backgrounds/parallax_2.png
+    - images/backgrounds/parallax_3.png
+    - images/backgrounds/parallax_4.png
+    - images/backgrounds/parallax_5.png
+
+    - images/characters/kuro/avoid.png
+    - images/characters/kuro/bite.png
+    - images/characters/kuro/dash.png
+    - images/characters/kuro/dead.png
+    - images/characters/kuro/hurt.png
+    - images/characters/kuro/idle.png
+    - images/characters/kuro/jump.png
+    - images/characters/kuro/kick.png
+    - images/characters/kuro/move.png
+    - images/characters/mono/avoid.png
+    - images/characters/mono/bite.png
+    - images/characters/mono/dash.png
+    - images/characters/mono/dead.png
+    - images/characters/mono/hurt.png
+    - images/characters/mono/idle.png
+    - images/characters/mono/jump.png
+    - images/characters/mono/kick.png
+    - images/characters/mono/move.png
+    - images/characters/nico/avoid.png
+    - images/characters/nico/bite.png
+    - images/characters/nico/dash.png
+    - images/characters/nico/dead.png
+    - images/characters/nico/hurt.png
+    - images/characters/nico/idle.png
+    - images/characters/nico/jump.png
+    - images/characters/nico/kick.png
+    - images/characters/nico/move.png
+
+    - images/gamepad/background.png
+    - images/gamepad/knob.png
+    - images/gamepad/controls.png
